@@ -1,11 +1,9 @@
-# Simple workflow for deploying static content to GitHub Pages
-
-name: Deploy static content to Pages
+name: Deploy AdCheck v0.2 to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -27,15 +25,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload AdCheck v0.2
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./prototype/v0.2
+          path: './prototype/v0.2'
 
       - name: Deploy to GitHub Pages
         id: deployment
